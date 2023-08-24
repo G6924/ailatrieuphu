@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- include head.html -->
+  @@include('@@webRoot/layouts/head.html', {
+  "title": "WHO WANT TO BE A MILLIONAIRE"
+  })
+</head>
+
+<body>
+
+  <div class="wrapper animsition-overlay">
+
+    <main class="lContainer top">
+      <div class="container">
+        <div class="sound">
+          <audio autoplay loop>
+            <source src="@@webRoot/assets/sounds/openning.ogg" type="audio/ogg">
+          </audio>
+        </div>  
+        <div class="content">
+          <div class="logo wow bounceIn">
+            <img class="logo__img" src="@@webRoot/assets/img/common/logo.png" alt="">
+          </div>
+          <div class="btn wow bounceInUp" data-wow-delay="0.5s">
+            <!-- <div class="text-box">
+                <a href="@@webRoot/help/index.html" class="btn btn-white btn-animate">click me</a>
+            </div>
+            <div class="text-box">
+                <a href="@@webRoot/play/index.html" class="btn btn-white btn-animate">click me</a>
+            </div> -->
+            <div class="btnSide">
+              <a class="btn__click animsition-link" href="@@webRoot/help/index.html">HELP</a>
+            </div> 
+            <div class="btnSide">
+              <a class="btn__click animsition-link" href="@@webRoot/play/index.html">PLAY</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- /Main -->
+
+  </div>
+  <!-- /Wrapper -->
+
+  <!-- include scripts.html -->
+  @@include('@@webRoot/layouts/scripts.html')
+  <script> new WOW().init(); </script>
+</body>
+
+</html>

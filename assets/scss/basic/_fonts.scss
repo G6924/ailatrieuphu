@@ -1,0 +1,193 @@
+@font-face {
+	font-family: "icomoon";
+	src: url("../fonts/icomoon/fonts/icomoon.eot?c2yvce");
+	src: url("../fonts/icomoon/fonts/icomoon.eot?c2yvce#iefix") format("embedded-opentype"),
+		url("../fonts/icomoon/fonts/icomoon.ttf?c2yvce") format("truetype"),
+		url("../fonts/icomoon/fonts/icomoon.woff?c2yvce") format("woff"),
+		url("../fonts/icomoon/fonts/icomoon.svg?c2yvce#icomoon") format("svg");
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: "icomoon" !important;
+	speak: never;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-book:before {
+	content: "\e902";
+}
+.icon-nav:before {
+	content: "\e900";
+}
+.icon-email:before {
+	content: "\e901";
+}
+.icon-arrow-right:before {
+	content: "\e903";
+}
+.icon-phone:before {
+	content: "\e904";
+}
+.icon-item:before {
+	content: "\e905";
+}
+.icon-layer:before {
+	content: "\e906";
+}
+.icon-arrow-right-bold:before {
+	content: "\e907";
+}
+
+#edittingNowOnTheOurCms {
+	[class^="icon-"],
+	[class*=" icon-"] {
+		position: relative;
+		&:before {
+			content: "";
+			position: absolute;
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+	.icon-book:before {
+		background-image: url(../img/common/icon_book.png);
+		width: 16px;
+		height: 16px;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		@include max-screen($screen-sm) {
+			width: 14px;
+			height: 14px;
+		}
+	}
+	.icon-nav {
+		padding-left: 2rem;
+	}
+	.icon-email,
+	.icon-book {
+		padding-top: 1rem;
+	}
+	.icon-nav:before {
+		background-image: url(../img/common/icon_menu.png);
+		width: 18px;
+		height: 18px;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	.icon-email:before {
+		background-image: url(../img/common/icon_email.png);
+		width: 16px;
+		height: 16px;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+		@include max-screen($screen-sm) {
+			width: 14px;
+			height: 14px;
+		}
+	}
+	.icon-arrow-right {
+		width: 10px;
+		height: 10px;
+	}
+	.icon-arrow-right:before {
+		background-image: url(../img/common/icon_arrow.png);
+		width: 10px;
+		height: 10px;
+		left: 50%;
+		top: 0;
+		transform: translateX(-50%);
+	}
+	.topDemon {
+		.icon-email,
+		.icon-book {
+			padding: 0;
+			width: 20px;
+			height: 20px;
+			margin-right: 1rem;
+			@include max-screen($screen-sm) {
+				width: 14px;
+				height: 14px;
+			}
+		}
+		.icon-email:before {
+			background-image: url(../img/common/icon_email_black.png);
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 20px;
+			@include max-screen($screen-sm) {
+				width: 14px;
+			}
+		}
+		.icon-book:before {
+			background-image: url(../img/common/icon_book_black.png);
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 20px;
+			height: 20px;
+			@include max-screen($screen-sm) {
+				width: 14px;
+			}
+		}
+	}
+
+	.footerContainer {
+		.icon-email,
+		.icon-book {
+			padding-top: 0;
+			width: 20px;
+			height: 20px;
+			@include max-screen($screen-sm) {
+				width: 14px;
+				height: 14px;
+			}
+		}
+		.icon-email:before,
+		.icon-book:before {
+			left: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 20px;
+			@include max-screen($screen-sm) {
+				width: 14px;
+			}
+		}
+		.icon-arrow-right {
+			width: 16px;
+			height: 16px;
+			@include max-screen($screen-sm) {
+				width: 14px;
+				height: 14px;
+			}
+		}
+		.icon-arrow-right:before {
+			background-image: url(../img/common/icon_arrow_black.png);
+			width: 16px;
+			height: 16px;
+			left: 50%;
+			top: 0;
+			transform: translateX(-50%);
+			@include max-screen($screen-sm) {
+				width: 14px;
+				height: 14px;
+			}
+		}
+	}
+}

@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- include head.html -->
+  @@include('@@webRoot/layouts/head.html', {
+  "title": "WHO WANT TO BE A MILLIONAIRE"
+  })
+</head>
+
+<body>
+
+  <div class="wrapper animsition-overlay">
+
+    <main class="lContainer help">
+      <div class="container">
+        <div class="sound">
+          <audio autoplay loop>
+            <source src="@@webRoot/assets/sounds/tutorial.ogg" type="audio/ogg">
+          </audio>
+        </div>
+        <div class="menu">
+          <div class="menu__left">
+            <a class="btn animsition-link wow slideInLeft" href="@@webRoot/index.html"><i class="fas fa-reply-all"></i></a>
+          </div>
+          <div class="menu__right">
+            <!-- <a class="btn animsition-link" href="@@webRoot/help/index.html"></a> -->
+          </div>
+        </div>
+        <div class="content wow bounceInDown" data-wow-delay="0.5s" >    
+          <div class="instructions">
+            <div class="heading">
+              <img class="img" src="@@webRoot/assets/img/common/logo.png" alt="">  
+              <h2 class="title">Instructions</h2>
+            </div>
+            <p class="wow fadeInDown" data-wow-delay="1s">Try to win $1 million by answering all 15 questions correctly. You have three lifelines to help you along the way, and they are:</p>
+            <div class="box">
+              <div class="box__item wow fadeInDown" data-wow-delay="1.5s">
+                <div class="icon"><i class="fas fa-phone"></i></div>
+                <p><span class="text-yellow">Call-A-Buddy:</span> Ask your friend the question. He or she will give you the answer and % of how sier they are.</p>
+              </div>
+              <div class="box__item wow fadeInDown" data-wow-delay="2s">
+                <div class="icon">50:50</div>
+                <p><span class="text-yellow">50% Chance:</span> This lifeline removes two of the wrong answers.</p>
+              </div>
+              <div class="box__item wow fadeInDown" data-wow-delay="2.5s">
+                <div class="icon"><i class="fas fa-users"></i></div>
+                <p><span class="text-yellow">Audience Assistane:</span> Summon the help of the audience.</p>
+              </div>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </main>
+    <!-- /Main -->
+
+  </div>
+  <!-- /Wrapper -->
+
+  <!-- include scripts.html -->
+  @@include('@@webRoot/layouts/scripts.html')
+  <script> new WOW().init(); </script>
+</body>
+
+</html>

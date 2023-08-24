@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- include head.html -->
+  @@include('@@webRoot/layouts/head.html', {
+  "title": "WHO WANT TO BE A MILLIONAIRE"
+  })
+</head>
+
+<body>
+
+  <div class="wrapper animsition-overlay">
+
+    <main class="lContainer play">
+      <div class="container">
+        <div class="sound">
+          <audio autoplay>
+            <source src="@@webRoot/assets/sounds/play.ogg" type="audio/ogg">
+          </audio>
+          <audio autoplay loop>
+            <source src="@@webRoot/assets/sounds/question.ogg" type="audio/ogg">
+          </audio>
+          <audio id="audio" src="@@webRoot/assets/sounds/choice.ogg"></audio>
+          <audio id="correct" src="@@webRoot/assets/sounds/correct.ogg"></audio>
+          <audio id="wrong" src="@@webRoot/assets/sounds/wrong.ogg"></audio>
+          <audio id="end" src="@@webRoot/assets/sounds/end.ogg"></audio>
+          <audio id="answa" src="@@webRoot/assets/sounds/AswA.mp3"></audio>
+          <audio id="answb" src="@@webRoot/assets/sounds/AswB.mp3"></audio>
+          <audio id="answc" src="@@webRoot/assets/sounds/AswC.mp3"></audio>
+          <audio id="answd" src="@@webRoot/assets/sounds/AswD.mp3"></audio>
+        </div>
+        <div class="menu">
+          <div class="menu__left">
+            <a class="btn animsition-link wow slideInLeft" href="@@webRoot/index.html"><i class="fas fa-reply-all"></i></a>
+            <a data-wow-delay="0.5s" class="btn show wow slideInLeft" href="#"><i class="fas fa-dollar-sign"></i></a>
+          </div>
+          <div class="menu__right">
+            <a data-wow-delay="1s" class="btn hideQues wow slideInRight" onclick="play()" href="#">50:50</a>
+            <a data-wow-delay="0.5s" class="btn callDue wow slideInRight" onclick="play()" href="#"><i class="fas fa-phone"></i></a>
+            <a class="btn choseViewer wow slideInRight" onclick="play()" href="#"><i class="fas fa-users"></i></a>
+            <div id="modal4" class="modal4">
+              <div class="value listAnsCtn" id="value">
+                <div class="listAns">
+                  <div class="listAns__item">
+                    <div class="listAns__row"></div>
+                    <p class="listAns__txt">A</p>
+                  </div>
+                  <div class="listAns__item">
+                    <div class="listAns__row"></div>
+                    <p class="listAns__txt">B</p>
+                  </div>
+                  <div class="listAns__item">
+                    <div class="listAns__row"></div>
+                    <p class="listAns__txt">C</p>
+                  </div>
+                  <div class="listAns__item">
+                    <div class="listAns__row"></div>
+                    <p class="listAns__txt">D</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="money" class="money">
+          <ul class="moneyList">
+            <li id="15" class="moneyList__item">
+              <p class="number text-white">15 。$1 Million</p>
+            </li>
+            <li id="14" class="moneyList__item">
+              <p class="number">14 。$500,000</p>
+            </li>
+            <li id="13" class="moneyList__item">
+              <p class="number">13 。$250,000</p>
+            </li>
+            <li id="12" class="moneyList__item">
+              <p class="number">12 。$125,000</p>
+            </li>
+            <li id="11" class="moneyList__item">
+              <p class="number">11 。$64,000</p>
+            </li>
+            <li id="10" class="moneyList__item">
+              <p class="number text-white">10 。$32,000</p>
+            </li>
+            <li id="9" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;9 。$16,000</p>
+            </li>
+            <li id="8" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;8 。$8,000</p>
+            </li>
+            <li id="7" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;7 。$4,000</p>
+            </li>
+            <li id="6" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;6 。$2,000</p>
+            </li>
+            <li id="5" class="moneyList__item">
+              <p class="number text-white">&nbsp;&nbsp;5 。$1,000</p>
+            </li>
+            <li id="4" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;4 。$500</p>
+            </li>
+            <li id="3" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;3 。$300</p>
+            </li>
+            <li id="2" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;2 。$200</p>
+            </li>
+            <li id="1" class="moneyList__item">
+              <p class="number">&nbsp;&nbsp;1 。$100</p>
+            </li>
+          </ul>
+        </div>
+        <div class="content">
+          <div class="group">
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+              <div class="value" id="value">
+                <!-- <div class="correct"> -->
+                <h2 class="heading">
+                  You lose
+                </h2>
+                <p class="title">Good luck for another try</p>
+                <a class="btn animsition-link" href="../index.html">Quit</a>
+              </div>
+            </div>
+            <div id="modal1" class="modal1">
+              <div class="value" id="value">
+                <!-- <div class="correct"> -->
+                <h2 class="heading">
+                  You Win
+                </h2>
+                <p class="title">good job</p>
+                <a class="btn animsition-link" href="../index.html">Exit</a>
+              </div>
+            </div>
+            <div id="modal2" class="modal2">
+              <div class="value" id="value">
+                <!-- <div class="correct"> -->
+                <h2 class="heading">
+                  Do You Want To Stop?
+                </h2>
+                <p class="title">Get money and stop the game.</p>
+                <a class="btn animsition-link" href="../index.html">YES</a>
+                <a id="closemodal" class="btn animsition-link" href="javascript:void(0);">NO</a>
+              </div>
+            </div>
+            <div id="modal3" class="modal3">
+              <div class="value" id="value">
+                <!-- <div class="correct"> -->
+                <h2 class="heading">
+                  Do You Sure?
+                </h2>
+                <p class="title">Click No to go back the game.</p>
+                <a id="sure" class="btn animsition-link" href="javascript:void(0);">YES</a>
+                <a id="call" class="btn animsition-link" href="javascript:void(0);">YES</a>
+                <a id="viewer" class="btn animsition-link" href="javascript:void(0);">YES</a>
+                <a id="notSure" class="btn animsition-link" href="javascript:void(0);">NO</a>
+              </div>
+            </div>
+            <div class="logo">
+              <img class="logo__img" src="@@webRoot/assets/img/common/logo.png" alt="">
+            </div>
+            <div class="group" id="quizContainer">
+              <!-- <input type="file" id="fileUpload" />
+              <input type="button" id="upload" value="Upload" onclick="Upload()" /> -->
+              <!-- <hr /> -->
+              <!-- <div id="dvExcel"></div> -->
+              <div class="fix">
+                <div id="question" class="question wow bounceInUp"></div>
+                <div class="time" id="time">
+                  20
+                </div>
+              </div>
+              <div class="answer wow slideInLeft" data-wow-delay="2s">
+                <button class="option" id="btn0"><span class="text-yellow">A: </span><span id="choice0"></span>
+                  <button class="option" id="btn1"><span class="text-yellow">B: </span><span id="choice1"></span>
+              </div>
+              <div class="answer wow slideInRight" data-wow-delay="2s">
+                <button class="option" id="btn2"><span class="text-yellow">C: </span><span id="choice2"></span>
+                  <button class="option" id="btn3"><span class="text-yellow">D: </span><span id="choice3"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- /Main -->
+
+  </div>
+  <!-- /Wrapper -->
+
+  <!-- include scripts.html -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/xlsx.full.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.13.5/jszip.js"></script>
+  <script type="text/javascript" src="../assets/js/excel.js"></script>
+  @@include('@@webRoot/layouts/scripts.html')
+  <script> new WOW().init();</script>
+</body>
+
+</html>

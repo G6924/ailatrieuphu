@@ -1,0 +1,126 @@
+@charset "utf-8";
+
+@import 'variable';
+@import 'basic/mixin';
+@import 'basic/selector';
+
+@import 'basic/reset';
+@import 'basic/default';
+@import 'basic/grid';
+
+/*==================================================================================================
+	Font Icon
+==================================================================================================*/
+@import 'components/font-awesome/font-awesome_modify';
+@import 'components/font-awesome/fontawesome';
+@import 'components/font-awesome/solid';
+@import 'components/font-awesome/light';
+@import 'components/font-awesome/brands';
+
+/*==================================================================================================
+	サイト基礎
+==================================================================================================*/
+body {
+  color: #333333;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  overflow-x: hidden;
+  line-height: 1.6;
+  font-family: $default-font;
+
+  @include min-screen(1024px) {
+    @include font-size(16);
+  }
+
+  @include max-screen(1023px) {
+    @include font-size(14);
+  }
+
+  a {
+    transition: 0.5s;
+    color: #333333;
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+      opacity: 0.8;
+    }
+  }
+}
+
+.animsition-overlay-slide {
+  background-color: #001d3b !important;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+/**
+* BUTTON
+*/
+
+// .btn:link,
+// .btn:visited {
+//     text-transform: uppercase;
+//     text-decoration: none;
+//     padding: 15px 40px;
+//     display: inline-block;
+//     border-radius: 100px;
+//     transition: all .2s;
+//     position: absolute;
+// }
+
+// .btn:hover {
+//     transform: translateY(-3px);
+//     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+// }
+
+// .btn:active {
+//     transform: translateY(-1px);
+//     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+// }
+
+// .btn-white {
+//     background-color: #fff;
+//     color: #777;
+// }
+
+// .btn::after {
+//     content: "";
+//     display: inline-block;
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 100px;
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     z-index: -1;
+//     transition: all .4s;
+// }
+
+// .btn-white::after {
+//     background-color: #fff;
+// }
+
+// .btn:hover::after {
+//     transform: scaleX(1.4) scaleY(1.6);
+//     opacity: 0;
+// }
+
+// .btn-animated {
+//     animation: moveInBottom 5s ease-out;
+//     animation-fill-mode: backwards;
+// }
+
+// @keyframes moveInBottom {
+//   0% {
+//       opacity: 0;
+//       transform: translateY(30px);
+//   }
+
+//   100% {
+//       opacity: 1;
+//       transform: translateY(0px);
+//   }
+// }
